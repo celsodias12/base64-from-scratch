@@ -17,7 +17,7 @@ describe('Files', () => {
     const encodedFile = base64.encode(file)
     const decodedFile = base64.decode(encodedFile, isFile)
 
-    const decodedFileInHex = Buffer.from(decodedFile, 'binary').toString('hex')
+    const decodedFileInHex = decodedFile.toString('hex')
 
     const expectedEncodingInHex = file.toString('hex')
 

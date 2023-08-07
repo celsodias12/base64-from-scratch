@@ -138,6 +138,8 @@ export const base64 = {
 
     const text = binaryToText(binary, isFile)
 
+    if (isFile) return Buffer.from(text, 'binary')
+
     return text
   },
 }

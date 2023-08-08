@@ -24,7 +24,7 @@ console.log(encoded) // SGVsbG8sIHdvcmxkIQ==
 To decode a base64-encoded string, call the `decode()` function and pass the string as an argument. The function will return a text string corresponding to the input.
 
 ```typescript
-import { base64 } from './base64'
+import { base64 } from './src'
 
 const encoded = 'SGVsbG8sIHdvcmxkIQ=='
 const text = base64.decode(encoded)
@@ -37,8 +37,8 @@ console.log(text) // Hello, world!
 To encode a file to base64, call the `encode()` function and pass a buffer object containing the file as an argument. The function will return a base64-encoded string corresponding to the input.
 
 ```typescript
-import { base64 } from './base64'
-import { readFileSync } from 'fs'
+import { readFileSync } from 'node:fs'
+import { base64 } from './src'
 
 const file = readFileSync('file.txt')
 const encoded = base64.encode(file)
@@ -51,8 +51,8 @@ console.log(encoded) // SGVsbG8sIHdvcmxkIQ==
 To decode a base64-encoded file, call the `decode()` function and pass the base64-encoded string as an argument. The function will return a buffer object containing the file corresponding to the input.
 
 ```typescript
-import { base64 } from './base64'
-import { writeFileSync } from 'fs'
+import { readFileSync } from 'node:fs'
+import { base64 } from './src'
 
 const encoded = 'SGVsbG8sIHdvcmxkIQ=='
 const file = base64.decode(encoded, true)
